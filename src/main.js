@@ -22,7 +22,7 @@ let searchParams = {
   safesearch: true,
   q: '',
   page: 1,
-  per_page: 15,
+  per_page: 15, 
 };
 
 let currentPage = 1;
