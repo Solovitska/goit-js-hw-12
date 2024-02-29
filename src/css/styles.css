@@ -1,12 +1,6 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('./header.css'); 
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,3 +17,159 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    width: 1440px;
+
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+    width: 240px;
+    height: 25px;
+    padding: 8px 16px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #808080;
+    font-size: 16px;
+}
+
+.search-input:hover {
+  border: 1px solid #000;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 1px solid #4e75ff;
+}
+
+.search-button {
+display: inline-flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #4e75ff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  width: 91px;
+  height: 41px;
+}
+
+#load-more {
+  border-radius: 8px;
+  border: #4e75ff;
+  width: 125px;
+  height: 40px;
+  margin-top: 32px;
+  margin-left: 50%;
+  background-color: #4e75ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.search-button:hover,
+.load-more:hover {
+  background-color: #6c8cff;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.gallery-item {
+  width: calc((100% - 48px) / 4);
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.04);
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.container-app {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+}
+
+.image-info {
+  display: flex;
+  gap: 32px;
+  padding: 0 20px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.image-info p {
+  padding-top: 4px;
+  margin: 0;
+  width: fit-content;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.image-info .text {
+  display: flex;
+  justify-content: center;
+
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
