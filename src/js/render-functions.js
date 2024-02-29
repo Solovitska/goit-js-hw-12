@@ -1,5 +1,5 @@
+'use strict';
 import iziToast from 'izitoast';
-
 export function displayErrorToast() {
   iziToast.error({
     title: 'Error',
