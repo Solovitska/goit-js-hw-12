@@ -1,4 +1,4 @@
-
+'use strict';
 import axios from 'axios';
 
 const apiKey = '42574580-2c52a100a2b29f75d1ac631cf'; 
