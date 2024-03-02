@@ -5,6 +5,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getImages } from './js/pixabay-api';
 import { displayErrorToast, showResult } from './js/render-functions';
 
+let lightBox; 
+
 const form = document.getElementById('search-form');
 const gallery = document.getElementById('gallery');
 const loader = document.querySelector('.loader');
@@ -28,6 +30,8 @@ let searchParams = {
 
 let currentPage = 1;
 
+// Creating an instance SimpleLightbox
+lightBox = new SimpleLightbox('.gallery-link');
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
   loader.style.display = 'block';
@@ -110,7 +114,7 @@ function appendGallery(images) {
     });
   }
 
-  let lightBox = new SimpleLightbox('.gallery-link');
+  // Updating an instance SimpleLightbox
   lightBox.refresh();
 }
 
