@@ -2,8 +2,8 @@
 import iziToast from 'izitoast';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import { getPhotoByName } from './js/pixabay-api';
-import { displayErrorToast, displayNoResultsToast } from './js/render-functions';
+import { getImages } from './js/pixabay-api';
+import { displayErrorToast, showResult } from './js/render-functions';
 
 const form = document.getElementById('search-form');
 const gallery = document.getElementById('gallery');
@@ -36,7 +36,7 @@ form.addEventListener('submit', async function (e) {
   searchParams.page = 1;
   currentPage = 1;
   try {
-    const images = await getPhotoByName(searchParams);
+    const images = await getImages(searchParams);
     createGallery(images);
   } catch (error) {
     displayErrorToast();
@@ -49,7 +49,7 @@ loadMoreButton.addEventListener('click', async function () {
   currentPage++;
   searchParams.page = currentPage;
   try {
-    const images = await getPhotoByName(searchParams);
+    const images = await getImages(searchParams);
     appendGallery(images);
   } catch (error) {
     displayErrorToast();
@@ -58,7 +58,7 @@ loadMoreButton.addEventListener('click', async function () {
 
 function createGallery(images) {
   if (images.hits.length === 0) {
-    displayNoResultsToast();
+    showResult();
     clearGallery();
     loadMoreButton.style.display = 'none';
   } else {

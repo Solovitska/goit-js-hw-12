@@ -1,5 +1,5 @@
 @import url('./reset.css');
-@import url('./header.css'); 
+
 
 
 :root {
@@ -36,7 +36,9 @@ body {
   gap: 8px;
   margin-bottom: 30px;
 }
-
+.isVisible{
+  visibility: hidden;
+}
 .search-input {
     width: 240px;
     height: 25px;
